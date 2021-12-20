@@ -9,12 +9,12 @@ models:
   - synthetics:
       data_source: __tmp__
       params:
-        epochs: 100
+        epochs: 500
         batch_size: 64
         vocab_size: 20000
         reset_states: False
-        learning_rate: 0.01
-        rnn_units: 256
+        learning_rate: 0.001
+        rnn_units: 1024
         dropout_rate: 0.2
         overwrite: True
         early_stopping: True
@@ -30,7 +30,7 @@ models:
         in_set_count: 10
         pattern_count: 10
       generate:
-        num_records: 5000
+        num_records: 167474
         max_invalid: null
       privacy_filters:
         outliers: medium
