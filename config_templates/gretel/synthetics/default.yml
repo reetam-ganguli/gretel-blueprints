@@ -1,32 +1,56 @@
-schema_version: "1.0"
-
-models:
-  - synthetics:
-      data_source: __tmp__
-      params:
-        epochs: 500
-        batch_size: 64
-        vocab_size: 20000
-        reset_states: False
-        learning_rate: 0.001
-        rnn_units: 1024
-        dropout_rate: 0.2
-        overwrite: True
-        early_stopping: True
-        gen_temp: 1.0
-        predict_batch_size: 64
-        validation_split: False
-        dp: False
-        dp_noise_multiplier: 0.001
-        dp_l2_norm_clip: 5.0
-        dp_microbatches: 1
-        data_upsample_limit: 10000
-      validators:
-        in_set_count: 10
-        pattern_count: 10
-      generate:
-        num_records: 167474
-        max_invalid: null
-      privacy_filters:
-        outliers: medium
-        similarity: medium
+{
+  "schema_version": "1.0",
+  "name": null,
+  "models": [
+    {
+      "synthetics": {
+        "params": {
+          "field_delimiter": null,
+          "epochs": 100,
+          "batch_size": 64,
+          "vocab_size": 20000,
+          "reset_states": false,
+          "learning_rate": 0.001,
+          "rnn_units": 1024,
+          "dropout_rate": 0.2,
+          "overwrite": true,
+          "early_stopping": true,
+          "gen_temp": 1,
+          "predict_batch_size": 64,
+          "validation_split": false,
+          "dp": false,
+          "dp_noise_multiplier": 0.001,
+          "dp_l2_norm_clip": 5,
+          "dp_microbatches": 1,
+          "early_stopping_min_delta": null,
+          "max_training_time_seconds": 3000,
+          "field_cluster_size": 20,
+          "average_record_length_threshold": 250,
+          "data_upsample_limit": 10000
+        },
+        "validators": {
+          "in_set_count": 10,
+          "pattern_count": 10,
+          "datetime_formats": "infer"
+        },
+        "generate": {
+          "num_records": 167474,
+          "max_invalid": null
+        },
+        "task": null,
+        "privacy_filters": {
+          "outliers": "medium",
+          "similarity": "medium"
+        },
+        "data_source": [
+          "gretel_7325e67044c64779bdef1a7085547e72_fully preprocessed discancer data with VIF reduction.csv"
+        ],
+        "debug": {
+          "invalid_record_cutoff": 40
+        }
+      }
+    }
+  ],
+  "notifications": null,
+  "label_predictors": null
+}
